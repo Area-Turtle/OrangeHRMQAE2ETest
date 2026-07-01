@@ -16,40 +16,40 @@ jobs:
       - name: Checkout code (server repo)
         uses: actions/checkout@v5
         with:
-          repository: Area-Turtle/the-internet.herokuapp.com.server  # Specify your server repository
-          ref: master
-          path: server
+          repository: Area-Turtle/OrangeHRMQAE2ETest  # Specify your server repository
+          ref: main
+          path: main
 
-      - name: setup Ruby
-        uses: ruby/setup-ruby@v1
-        with: 
-          ruby-version: '2.7.2'
-          bundler-cache: true
-          working-directory: server
+      # - name: setup Ruby
+      #   uses: ruby/setup-ruby@v1
+      #   with: 
+      #     ruby-version: '2.7.2'
+      #     bundler-cache: true
+      #     working-directory: server
 
-      - name: install ruby dependencies
-        working-directory: server
-        run: bundle install
+      # - name: install ruby dependencies
+      #   working-directory: server
+      #   run: bundle install
 
-      - name: Start The Internet Server
-        working-directory: server
-        run: |
-          bundle exec rackup -p 9292 > server.log 2>&1 &
-          echo $! > server.pid
+      # - name: Start The Internet Server
+      #   working-directory: server
+      #   run: |
+      #     bundle exec rackup -p 9292 > server.log 2>&1 &
+      #     echo $! > server.pid
 
-      - name: Health Check
-        run: |
-          for i in {1..30}; do
-            if curl -f http://localhost:9292; then
-              echo "Server is up"
-              exit 0
-            fi
-            echo "Waiting for server..."
-            sleep 2
-          done
-          echo "Server failed to start"
-          cat server.log
-          exit 1
+      # - name: Health Check
+      #   run: |
+      #     for i in {1..30}; do
+      #       if curl -f http://localhost:9292; then
+      #         echo "Server is up"
+      #         exit 0
+      #       fi
+      #       echo "Waiting for server..."
+      #       sleep 2
+      #     done
+      #     echo "Server failed to start"
+      #     cat server.log
+      #     exit 1
 
       # - name: Show server log
       #   working-directory: server
@@ -60,13 +60,13 @@ jobs:
       #   run: |
       #     curl -s http://localhost:9292 | head -50
 
-      - name: Checkout code (selenium repo)
-        uses: actions/checkout@v5
-        with:
-          repository: Area-Turtle/selenium-automation-project  # Specify your selenium repository, if it's different from the main one
-          # path: selenium-automation-project
-          ref: main  # Optionally specify the branch for selenium tests
-          path: seleneium
+      # - name: Checkout code (selenium repo)
+      #   uses: actions/checkout@v5
+      #   with:
+      #     repository: Area-Turtle/selenium-automation-project  # Specify your selenium repository, if it's different from the main one
+      #     # path: selenium-automation-project
+      #     ref: main  # Optionally specify the branch for selenium tests
+      #     path: seleneium
       
       - name: Set up Node.js for selenium
         uses: actions/setup-node@v4

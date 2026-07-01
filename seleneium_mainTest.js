@@ -19,7 +19,7 @@ async function runMainTest(driver) {
     return commonActions.validate(
         'Homepage Title',
         title,
-        'Swag Labs'
+        'OrangeHRM'
     );
 }
 // async function runFindPageHeading(driver) {
