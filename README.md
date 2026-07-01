@@ -1,6 +1,6 @@
-# SwagLabsQAE2ETest
+# OrangeHRMQAE2ETest
 is a selenium automation for a example template website
-Demo Website is from Swag Labs > Sause Demo
+Demo Website is from OrangeHRM-demo
 ## Table of Contents
 - [About](#about)
 - [Features](#features)
@@ -24,7 +24,7 @@ It uses Node.js, Cypress, and Javascript to run end-to-end tests.
 ## Installation
 ```bash
 # Clone the repository
-git clone (https://github.com/Area-Turtle/SwagLabsQAE2ETest.git)
+git clone (https://github.com/Area-Turtle/OrangeHRMQAE2ETest.git)
 
 # Navigate into the project folder
 cd project-name
@@ -37,5 +37,5 @@ nvm -v
 npm install
 
 # Local Host Run Site > localhost > http://localhost:3000
-node seleneium_mainTest.js.js
+node seleneium_mainTest.js
 ```

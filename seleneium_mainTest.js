@@ -7,7 +7,7 @@ const fs = require('fs');
 const commonActions = require('./support/commonActions');
 // const otherTests = require('./seleneium_tests/*')
 
-const BASE_URL = 'https://www.saucedemo.com/';
+const BASE_URL = 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login';
 
 async function runMainTest(driver) {
     await driver.get(BASE_URL);
